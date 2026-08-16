@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenLayer Spinner – Dual Consensus</title>
+  <style>
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #070707;
+    }
+    body.light { background: #F5F5F5; }
+    .spinner { width: 64px; height: 64px; position: relative; }
+    .logo { position: absolute; inset: 24%; fill: #110FFF; }
+    .ring { position: absolute; inset: 0; border: 2px solid transparent; border-radius: 50%; }
+    .ring-a {
+      border-top-color: #110FFF; border-left-color: #110FFF;
+      animation: spin 1.6s linear infinite;
+    }
+    .ring-b {
+      inset: 6px;
+      border-bottom-color: #bca2ff; border-right-color: #bca2ff;
+      animation: spin 1.2s linear infinite reverse;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="spinner">
+    <div class="ring ring-a"></div>
+    <div class="ring ring-b"></div>
+    <svg class="logo" viewBox="0 0 97.76 91.93">
+      <polygon points="44.26 32.35 27.72 67.12 43.29 74.9 0 91.93 44.26 0 44.26 32.35"/>
+      <polygon points="53.5 32.35 70.04 67.12 54.47 74.9 97.76 91.93 53.5 0 53.5 32.35"/>
+      <polygon points="48.64 43.78 58.33 62.94 48.64 67.69 39.47 62.92 48.64 43.78"/>
+    </svg>
+  </div>
+</body>
+</html>
